@@ -4,6 +4,7 @@
  */
 import java.util.*;
 
+//-----------------------------------Class Bank--------------------------------
 public class Bank {
     private String name;
     private String bankCode;
@@ -22,6 +23,7 @@ public class Bank {
     }
 }
 
+//--------------------------ATM--------------------------
 class ATM{
     private int atmId;
     private String address;
@@ -32,10 +34,11 @@ class ATM{
     }
     
     public void authenticateUser(){
-        
+
     }
 }
 
+//-------------------------CashDispenser--------------------------
 class CashDispenser{
     private int totalFiveDollarBills;
     private int totalTwentyDollarBills;
@@ -59,24 +62,28 @@ class Keypad{
     }
 }
 
+//-------------------------------Screen------------------------------
 class Screen{
     public void showMessage(String massage){
         System.out.println("Screen: " +massage);
     }
 }
 
+//-------------------------------printer------------------------------
 class Printer{
     public String printReceipt(){
         return "Money Amount.";
     }
 }
 
+//-------------------------------cardReader------------------------------
 class CardReader{
     public String readCare(){
         return "Read Your Card.";
     }
 }
 
+//-------------------------------DepositSlot------------------------------
 class DepositSlot{
     private double totalamount;
     
@@ -89,6 +96,7 @@ class DepositSlot{
     }
 }
 
+//---------------------------------------Extends----------------------------
 class CheckDepositslot extends DepositSlot{
     private double checkamount;
 
