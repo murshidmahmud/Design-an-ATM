@@ -9,17 +9,13 @@ public class Bank {
     private String name;
     private String bankCode;
     
-    Bank(String name, String bankcode){
+    public Bank(String name, String bankcode){
         this.name=name;
         this.bankCode=bankCode;
     }
     
-    public double getBankCode(){
-        return getBankCode();
-    }
-    
-    public void addATM(ATM add){
-        
+    public String getBankCode(){
+        return bankCode;
     }
 }
 
@@ -28,13 +24,9 @@ class ATM{
     private int atmId;
     private String address;
     
-    ATM(int atmId, String address){
+    public ATM(int atmId, String address){
         this.atmId=atmId;
         this.address=address;
-    }
-    
-    public void authenticateUser(){
-
     }
 }
 
@@ -100,7 +92,7 @@ class DepositSlot{
 class CheckDepositslot extends DepositSlot{
     private double checkamount;
 
-    CheckDepositslot(double totalamount,double checkamount) {
+    public CheckDepositslot(double totalamount,double checkamount) {
         super(totalamount);
         this.checkamount=checkamount;
     }

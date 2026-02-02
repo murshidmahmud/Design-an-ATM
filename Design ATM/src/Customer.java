@@ -5,12 +5,13 @@
 
 import java.util.*;
 
+//---------------------------Customer---------------------------------
 public class Customer {
     private String name,email,phone;
     private Enumaration.Address address;
     private Enumaration.customerStatus Customerstatus;
     
-    Customer(String name, String email, String phone, Enumaration.Address address,Enumaration.customerStatus Customerstatus){
+    public Customer(String name, String email, String phone, Enumaration.Address address,Enumaration.customerStatus Customerstatus){
         this.name = name;
         this.email = email;
         this.phone = phone;
@@ -23,13 +24,14 @@ public class Customer {
     }
 }
 
+//-------------------------------------card------------------------------
 class Card{
     private String cardNumber;
     private String customerName;
     private String date;
     private int pin;
     
-    Card(String cardNumber, String customerName, String date, int pin){
+    public Card(String cardNumber, String customerName, String date, int pin){
         this.cardNumber = cardNumber;
         this.customerName= customerName;
         this.date = date;
@@ -37,6 +39,7 @@ class Card{
     }
 }
 
+//------------------------------------Account-------------------------------
 class Account{
     private int accountNumber;
     private double totalBalance;
@@ -44,15 +47,16 @@ class Account{
     
     Account(int accountNumber, double totlaBalance, double availableBalance){
         this.accountNumber = accountNumber;   
-        this.totalBalance = 00.0;
+        this.totalBalance = totalBalance;
         this.availableBalance = availableBalance;
     }
     
     public double getBalance(){
-        return getBalance();
+        return totalBalance;
     }
 }
 
+//---------------------------------------Account Extends------------------------
 class SavingAccount extends Account{
     private double withdraw;
     
