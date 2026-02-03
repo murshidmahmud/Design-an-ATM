@@ -17,6 +17,11 @@ public class Bank {
     public String getBankCode(){
         return bankCode;
     }
+    
+    public void display_bank(){
+        System.out.println("Bank name: "+name);
+        System.out.println();
+    }
 }
 
 //--------------------------ATM--------------------------

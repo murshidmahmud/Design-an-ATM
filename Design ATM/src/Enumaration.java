@@ -27,5 +27,14 @@ public class Enumaration {
             this.zipcode = zipcode;
             this.country = country;
         }
+        
+        public void display(){
+            System.out.println("Address: "+address);
+            System.out.println("City   : "+city);
+            System.out.println("State  : "+state);
+            //System.out.println("Zipcode: "+zipcode);
+            System.out.println("Country: "+country);
+            System.out.println();
+        }
     }
 }

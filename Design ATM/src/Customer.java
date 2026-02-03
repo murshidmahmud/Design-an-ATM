@@ -22,6 +22,12 @@ public class Customer {
     public void makeTransaction(Transaction transaction){
         transaction.makeTransaction();
     }
+    
+    public void display_customer(){
+        System.out.println("Name : "+name);
+        System.out.println("Phone: "+phone);
+        System.out.println();
+    }
 }
 
 //-------------------------------------card------------------------------
@@ -45,10 +51,22 @@ class Account{
     private double totalBalance;
     private double availableBalance;
     
-    Account(int accountNumber, double totlaBalance, double availableBalance){
+    public Account(int accountNumber, double totlaBalance, double availableBalance){
         this.accountNumber = accountNumber;   
         this.totalBalance = totalBalance;
         this.availableBalance = availableBalance;
+    }
+
+    Account(int account) {
+        
+    }
+    
+    public void deposit(double amount){
+        totalBalance +=amount;
+    }
+    
+    public void withdraw(double amountwithdraw){
+        totalBalance -=amountwithdraw;
     }
     
     public double getBalance(){

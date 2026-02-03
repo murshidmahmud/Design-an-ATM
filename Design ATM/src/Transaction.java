@@ -23,45 +23,52 @@ abstract class Transaction {
 //----------------------------------------Transaction Extends------------------------
 class BalanceInquiry extends Transaction{
     
-    private double accountId;
+    private Account account;
     
-    public BalanceInquiry(int transactionid, Enumaration.transactionStatus status, Date creationDate, double accountId){
+    public BalanceInquiry(int transactionid, Enumaration.transactionStatus status, Date creationDate, Account account){
         super(transactionid,status,creationDate);
-        this.accountId = accountId;
+        this.account = account;
     }
     
     @Override
     public void makeTransaction(){
-        System.out.println("Your Balance is: "+accountId);
+        System.out.println();
+        System.out.println("Your total Balance: "+account.getBalance());
     }
 }
 
 class Deposit extends Transaction{
     
     private double amount;
+    private Account account;
     
-    public Deposit(int transactionid, Enumaration.transactionStatus status, Date creationDate,double amount){
+    public Deposit(int transactionid, Enumaration.transactionStatus status, Date creationDate,double amount,Account account){
         super(transactionid,status,creationDate);
         this.amount = amount;
+        this.account = account;
     }
     
     @Override
     public void makeTransaction(){
-        System.out.println("Your total amount: " + amount);
+        account.deposit(amount);
+        System.out.println("Deposit Successful.");
     }
 }
 
 class Withdraw extends Transaction{
     private double amountwithdraw;
+    private Account account;
     
-    public Withdraw(int transactionid, Enumaration.transactionStatus status, Date creationDate,double amountwithdraw){
+    public Withdraw(int transactionid, Enumaration.transactionStatus status, Date creationDate,double amountwithdraw,Account account){
         super(transactionid,status,creationDate);
         this.amountwithdraw = amountwithdraw;
+        this.account = account;
     }
     
     @Override
     public void makeTransaction(){
-        System.out.println("Withdraw amount: "+amountwithdraw);
+        account.withdraw(amountwithdraw);
+        System.out.println("Withdraw Successfull");
     }
 }
 
@@ -70,18 +77,23 @@ class Checkdeposit extends Deposit{
     private String checkNumber;
     private String bankCode;
     
-    public Checkdeposit(int transactionid, Enumaration.transactionStatus status, Date creationDate, double amount,String checkNumber,String bankCode) {
-        super(transactionid, status, creationDate, amount);
+    public Checkdeposit(int transactionid, Enumaration.transactionStatus status, Date creationDate, double amount,String checkNumber,String bankCode,Account account) {
+        super(transactionid, status, creationDate, amount,account);
         this.checkNumber = checkNumber;
         this.bankCode = bankCode;
-    }   
+    }
+    
+    public void makeTransaction(){
+        System.out.println("Number is: "+checkNumber);
+        System.out.println("Bankcode : "+bankCode);
+    }
 }
 
 class Cashdeoposit extends Deposit{
     private double cashDepositLimit;
     
-    public Cashdeoposit(int transactionid, Enumaration.transactionStatus status, Date creationDate, double amount,double cashDepositLimit) {
-        super(transactionid, status, creationDate, amount);
+    public Cashdeoposit(int transactionid, Enumaration.transactionStatus status, Date creationDate, double amount,double cashDepositLimit,Account account) {
+        super(transactionid, status, creationDate, amount,account);
         this.cashDepositLimit = cashDepositLimit;
     }
 }
