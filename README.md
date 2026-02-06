@@ -98,5 +98,11 @@
 <br/>
 
 ### Sequence Diagram
+<br/>
 
+<p align="center">
+  <image src="assets/sequence.png" alt="Sequence diagram"/>
+    <br/>
+     Sequence Diagram for ATM
+</p>
 
