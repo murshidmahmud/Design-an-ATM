@@ -94,3 +94,9 @@
    * **Customer:** This class will encapsulate the ATM’s customer. It will have the customer’s basic information like name, email, etc.
    * **Card:** Encapsulating the ATM card that the customer will use to authenticate themselves. Each customer can have one card.
    * **Transaction:** Encapsulating all transactions that the customer can perform on the ATM, like BalanceInquiry, Deposit, Withdraw, etc.
+
+<br/>
+
+### Sequence Diagram
+
+
