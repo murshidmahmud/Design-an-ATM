@@ -8,10 +8,10 @@ import java.util.*;
 //---------------------------Customer---------------------------------
 public class Customer {
     private String name,email,phone;
-    private Enumaration.Address address;
-    private Enumaration.customerStatus Customerstatus;
+    private Enumeration.Address address;
+    private Enumeration.customerStatus Customerstatus;
     
-    public Customer(String name, String email, String phone, Enumaration.Address address,Enumaration.customerStatus Customerstatus){
+    public Customer(String name, String email, String phone, Enumeration.Address address,Enumeration.customerStatus Customerstatus){
         this.name = name;
         this.email = email;
         this.phone = phone;
@@ -51,7 +51,7 @@ class Account{
     private double totalBalance;
     private double availableBalance;
     
-    public Account(int accountNumber, double totlaBalance, double availableBalance){
+    public Account(int accountNumber, double totalBalance, double availableBalance){
         this.accountNumber = accountNumber;   
         this.totalBalance = totalBalance;
         this.availableBalance = availableBalance;
@@ -78,8 +78,8 @@ class Account{
 class SavingAccount extends Account{
     private double withdraw;
     
-    public SavingAccount(int accountNumber, double totlaBalance, double availableBalance, double withdraw) {
-        super(accountNumber, totlaBalance, availableBalance);
+    public SavingAccount(int accountNumber, double totalBalance, double availableBalance, double withdraw) {
+        super(accountNumber, totalBalance, availableBalance);
         this.withdraw = withdraw;
     }
     

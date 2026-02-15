@@ -53,6 +53,8 @@ class CashDispenser{
     }
 }
 
+//----------------------------Keypad--------------------------------
+
 class Keypad{
     public String getinput(){
         return "Getinput in User";
@@ -61,8 +63,8 @@ class Keypad{
 
 //-------------------------------Screen------------------------------
 class Screen{
-    public void showMessage(String massage){
-        System.out.println("Screen: " +massage);
+    public void showMessage(String message){
+        System.out.println("Screen: " +message);
     }
 }
 
@@ -75,7 +77,7 @@ class Printer{
 
 //-------------------------------cardReader------------------------------
 class CardReader{
-    public String readCare(){
+    public String readCard(){
         return "Read Your Card.";
     }
 }
@@ -89,7 +91,7 @@ class DepositSlot{
     }
     
     public double gettotalamount(){
-        return gettotalamount();
+        return totalamount;
     }
 }
 

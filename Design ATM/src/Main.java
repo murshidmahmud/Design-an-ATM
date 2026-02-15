@@ -9,12 +9,12 @@ public class Main {
     public static void main(String[] args) {
         
         //Put input Address;
-        Enumaration.Address add = new Enumaration.Address("Uttara","Dhaka","Kawla","5700","Bangladesh");
+        Enumeration.Address add = new Enumeration.Address("Uttara","Dhaka","Kawla","5700","Bangladesh");
         add.display();
         
         Card cd = new Card("2382938","Murshid Mahmud","12/06/2026",1235);
         
-        Customer cos = new Customer("Murshid Mahmud","murshidmahmud@gamil.com","0154875415",add,Enumaration.customerStatus.Active);
+        Customer cos = new Customer("Murshid Mahmud","murshidmahmud@gamil.com","0154875415",add,Enumeration.customerStatus.Active);
         cos.display_customer();
         
         Bank bank = new Bank("Islami Bank","10012505");
@@ -24,13 +24,13 @@ public class Main {
         
         Account acc = new Account(0);
         
-        Transaction deposit = new Deposit(2512100,Enumaration.transactionStatus.Success,new Date(),50000,acc);
+        Transaction deposit = new Deposit(2512100,Enumeration.transactionStatus.Success,new Date(),50000,acc);
         deposit.makeTransaction();
         
-        Transaction withdraw = new Withdraw(2512100,Enumaration.transactionStatus.Success,new Date(), 2200,acc);
+        Transaction withdraw = new Withdraw(2512100,Enumeration.transactionStatus.Success,new Date(), 2200,acc);
         withdraw.makeTransaction();
         
-        Transaction inquiry = new BalanceInquiry(2512100,Enumaration.transactionStatus.Success,new Date(),acc);
+        Transaction inquiry = new BalanceInquiry(2512100,Enumeration.transactionStatus.Success,new Date(),acc);
         inquiry.makeTransaction();
     }
 }

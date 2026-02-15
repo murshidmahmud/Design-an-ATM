@@ -8,10 +8,10 @@ import java.util.*;
 //-------------------------------Transaction-----------------------------
 abstract class Transaction {
     protected int transactionid;
-    protected Enumaration.transactionStatus status;
+    protected Enumeration.transactionStatus status;
     protected Date creationDate;
     
-    public Transaction(int transactionid, Enumaration.transactionStatus status, Date creationDate){
+    public Transaction(int transactionid, Enumeration.transactionStatus status, Date creationDate){
         this.transactionid = transactionid;
         this.status = status;
         this.creationDate = creationDate;
@@ -25,7 +25,7 @@ class BalanceInquiry extends Transaction{
     
     private Account account;
     
-    public BalanceInquiry(int transactionid, Enumaration.transactionStatus status, Date creationDate, Account account){
+    public BalanceInquiry(int transactionid, Enumeration.transactionStatus status, Date creationDate, Account account){
         super(transactionid,status,creationDate);
         this.account = account;
     }
@@ -42,7 +42,7 @@ class Deposit extends Transaction{
     private double amount;
     private Account account;
     
-    public Deposit(int transactionid, Enumaration.transactionStatus status, Date creationDate,double amount,Account account){
+    public Deposit(int transactionid, Enumeration.transactionStatus status, Date creationDate,double amount,Account account){
         super(transactionid,status,creationDate);
         this.amount = amount;
         this.account = account;
@@ -59,7 +59,7 @@ class Withdraw extends Transaction{
     private double amountwithdraw;
     private Account account;
     
-    public Withdraw(int transactionid, Enumaration.transactionStatus status, Date creationDate,double amountwithdraw,Account account){
+    public Withdraw(int transactionid, Enumeration.transactionStatus status, Date creationDate,double amountwithdraw,Account account){
         super(transactionid,status,creationDate);
         this.amountwithdraw = amountwithdraw;
         this.account = account;
@@ -77,13 +77,15 @@ class Checkdeposit extends Deposit{
     private String checkNumber;
     private String bankCode;
     
-    public Checkdeposit(int transactionid, Enumaration.transactionStatus status, Date creationDate, double amount,String checkNumber,String bankCode,Account account) {
+    public Checkdeposit(int transactionid, Enumeration.transactionStatus status, Date creationDate, double amount,String checkNumber,String bankCode,Account account) {
         super(transactionid, status, creationDate, amount,account);
         this.checkNumber = checkNumber;
         this.bankCode = bankCode;
     }
     
+    @Override
     public void makeTransaction(){
+//        super.makeTransaction();
         System.out.println("Number is: "+checkNumber);
         System.out.println("Bankcode : "+bankCode);
     }
@@ -92,7 +94,7 @@ class Checkdeposit extends Deposit{
 class Cashdeoposit extends Deposit{
     private double cashDepositLimit;
     
-    public Cashdeoposit(int transactionid, Enumaration.transactionStatus status, Date creationDate, double amount,double cashDepositLimit,Account account) {
+    public Cashdeoposit(int transactionid, Enumeration.transactionStatus status, Date creationDate, double amount,double cashDepositLimit,Account account) {
         super(transactionid, status, creationDate, amount,account);
         this.cashDepositLimit = cashDepositLimit;
     }
@@ -104,7 +106,7 @@ class Transfer extends Transaction{
     private int sourceAccount;
     private double amount;
     
-    public Transfer(int transactionid, Enumaration.transactionStatus status, Date creationDate,int destinationAccount, int sourceAccount, double amount){
+    public Transfer(int transactionid, Enumeration.transactionStatus status, Date creationDate,int destinationAccount, int sourceAccount, double amount){
         super(transactionid,status,creationDate);
         this.destinationAccount = destinationAccount;
         this.sourceAccount = sourceAccount;

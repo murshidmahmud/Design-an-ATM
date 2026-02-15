@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-public class Enumaration {
+public class Enumeration {
     
     public enum transactionType{
         BalanceInquiry, DepositCash, DepositCheck, Withdraw, Transfer;
